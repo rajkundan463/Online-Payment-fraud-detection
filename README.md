@@ -1,9 +1,9 @@
-# online-fraud-detection
-using jupyter notebook and pycharm with language python with pandas ,streamlit 
 
 # Online Fraud Detection
 
 This project aims to detect online fraud using machine learning techniques. It includes preprocessing steps, data analysis, model training, and prediction.
+
+using jupyter notebook and pycharm with language python with pandas ,streamlit 
 
 ## Table of Contents
 
