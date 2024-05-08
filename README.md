@@ -24,6 +24,7 @@ Online fraud is a significant concern for financial institutions and online plat
 - Display descriptive statistics of the dataset.
 - Visualize distribution of transaction types.
 - Train a machine learning model for fraud detection.
+  (using jupyter notebook)
 - Make predictions on new data.
 
 ## Installation
