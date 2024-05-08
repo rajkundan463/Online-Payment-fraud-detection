@@ -5,7 +5,6 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 import plotly.express as px
 
-
 def main():
     st.title("Online Fraud Detection ")
 
@@ -18,12 +17,9 @@ def main():
         # Read CSV file
         data = pd.read_csv(uploaded_file)
 
-        # Sort data by name
-        sorted_data = data.sort_values(by='nameOrig')
-
-        # Display first few rows of the sorted dataset
-        st.subheader("Sorted Dataset:")
-        st.write(sorted_data.head())
+        # Display first few rows of the dataset
+        st.subheader("Dataset:")
+        st.write(data.head())
 
         # Display options in the sidebar
         display_min_max_amount = st.sidebar.checkbox("Display Min and Max Amount")
@@ -31,19 +27,22 @@ def main():
 
         if display_min_max_amount:
             st.subheader("Minimum and Maximum Amount:")
-            min_amount = sorted_data['amount'].min()
-            max_amount = sorted_data['amount'].max()
+            min_amount = data['amount'].min()
+            max_amount = data['amount'].max()
             st.write(f"Minimum Amount: {min_amount}")
             st.write(f"Maximum Amount: {max_amount}")
 
         if display_type_of_payment:
             st.subheader("Type of Payment:")
-            type_counts = sorted_data["type"].value_counts()
+            type_counts = data["type"].value_counts()
             st.write(type_counts)
+
+
 
         # Preprocessing steps
         data["type"] = data["type"].map({"CASH_OUT": 1, "PAYMENT": 2, "CASH_IN": 3, "TRANSFER": 4, "DEBIT": 5})
         data["isFraud"] = data["isFraud"].map({0: "No Fraud", 1: "Fraud"})
+
 
         # Display summary statistics
         st.subheader("Summary Statistics:")
@@ -76,7 +75,6 @@ def main():
 
         st.subheader("Prediction:")
         st.write(prediction)
-
 
 if __name__ == "__main__":
     main()
