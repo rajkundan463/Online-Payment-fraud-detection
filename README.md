@@ -1,5 +1,5 @@
 
-# Online Fraud Detection
+# Online Payment Fraud Detection
 
 This project aims to detect online fraud using machine learning techniques. It includes preprocessing steps, data analysis, model training, and prediction.
 
